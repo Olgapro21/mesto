@@ -1,0 +1,13 @@
+.profile-info__edit-button {
+  margin: 15px 0 0 0;
+  background-color: #000000;
+  box-sizing: border-box;
+  max-width: 24px;
+  max-height: 24px;
+  border: 1px solid #FFF;
+  background-image: url(../images/vector.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: .3s ease;
+}

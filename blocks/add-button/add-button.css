@@ -1,0 +1,16 @@
+.add-button {
+  background-color: #000000;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 50px;
+  align-self: center;
+  background-position: center center;
+  background-image:url(../images/plus.png);
+  background-repeat: no-repeat;
+  border: 2px solid #FFF;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: .3s ease;
+}

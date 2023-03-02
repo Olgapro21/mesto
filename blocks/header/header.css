@@ -1,0 +1,26 @@
+.header {
+  max-width: 1280px;
+  width: calc(100% - 200px*2);
+  border-bottom: 1px solid #545454;
+}
+
+/*@media screen and (max-width: 1279px) {
+  .header {
+    max-width: 1024px;
+    width: calc(100% - 150px*2);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header {
+    max-width: 768px;
+    width: calc(100% - 100px*2);
+  }
+}*/
+
+@media screen and (max-width: 767px) {
+  .header {
+    max-width: 320px;
+    width: calc(100% - 27px*2);
+  }
+}
