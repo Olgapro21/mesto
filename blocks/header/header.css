@@ -18,9 +18,8 @@
   }
 }*/
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 439px) {
   .header {
-    max-width: 320px;
-    width: calc(100% - 27px*2);
+    width: 100%;
   }
 }

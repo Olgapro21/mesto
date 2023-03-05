@@ -1,0 +1,23 @@
+.profile-bloks__edit-button {
+  /*align-self: flex-end;*/
+  padding: 0;
+  margin: 15px 0 0 0;
+  background-color: #000000;
+  box-sizing: border-box;
+  max-width: 24px;
+  max-height: 24px;
+  border: 1px solid #FFF;
+  background-image: url(../../../images/vector.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .profile-bloks__edit-button {
+    margin: 8px 0 0 0;
+    max-width: 18px;
+    max-height: 18px;
+  }
+}
