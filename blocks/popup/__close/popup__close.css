@@ -1,0 +1,21 @@
+.popup__close {
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  background-color: #000000;
+  box-sizing: border-box;
+  border: none;
+  background-image: url(../../../images/cose-Icon.png);
+  align-self: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  position: absolute;
+  right: -40px;
+  top: -40px;
+}
+
+.popup__close:hover {
+  opacity: .6;
+}
