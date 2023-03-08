@@ -18,8 +18,16 @@
   opacity: .6;
 }
 
+/*@media screen and (max-width: 800px) {
+  .profile-bloks__add-button {
+    margin: 0;
+    width: calc(100% - 20px*2);
+  }
+}*/
 
-@media screen and (max-width: 449px) {
+
+
+@media screen and (max-width: 800px) {
   .profile-bloks__add-button {
     margin: 0;
     width: 100%;

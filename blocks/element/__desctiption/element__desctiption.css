@@ -1,6 +1,16 @@
 .element__desctiption {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 282px;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin: 25px 15px 31px 21px;
+  padding: 25px 15px 31px 21px;
+  border-radius: 0 0 10px 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .element__desctiption {
+    max-width: 282px;
+  }
 }

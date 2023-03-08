@@ -4,21 +4,21 @@
   width: calc(100% - 200px*2);
 }
 
-/*@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1279px) {
   .content__section {
-    max-width: 1024px;
-    width: calc(100% - 150px*2);
+    /*max-width: 1024px;*/
+    width: calc(100% - 48px*2);
   }
 }
 
 @media screen and (max-width: 1023px) {
   .content__section {
-    max-width: 768px;
-    width: calc(100% - 100px*2);
+    /*max-width: 768px;*/
+    width: calc(100% - 35px*2);
   }
-}*/
+}
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 320px) {
   .content__section {
     width: calc(100% - 19px*2);
   }
