@@ -1,5 +1,15 @@
 .profile-bloks__avatar {
-  max-width: 168.75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .profile-bloks__avatar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }

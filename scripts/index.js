@@ -4,7 +4,7 @@ const popupOpenButtonElement = document.querySelector(".profile-bloks__edit-butt
 
 const openPopup = function () {
   popupElement.classList.add("popup_opened");
-  console.log("Open popup clicked")
+  console.log("Open popup clicked");
 };
 
 const closePopup = function () {
@@ -28,17 +28,7 @@ function handleFormSubmit(evt) {
   profileNameElement.textContent = nameInputElement.value;
   profileJobElement.textContent = jobInputElement.value;
 
-
     popupElement.classList.remove("popup_opened");
 }
 
 formElement.addEventListener('submit', handleFormSubmit);
-
-
-
-
-//profileNameElement.textContent = nameInputElement.value;
-//profileJobElement.textContent = jobInputElement.value;
-
-//nameInputElement.textContent = profileNameElement.value;
-//jobInputElement.textContent = profileJobElement.value;

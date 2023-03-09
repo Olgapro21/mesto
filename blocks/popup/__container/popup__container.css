@@ -1,11 +1,12 @@
 .popup__container {
-  /*display: flex;*/
-  padding: 34px 36px 37px;
-  position: absolute;
-  background: #fff;
+  box-sizing: border-box;
   max-width: 430px;
+  max-height: 330px;
+  padding: 34px 36px 37px;
+  background: #fff;
+  position: absolute;
   left: 50%;
-  top: 50%;
+  top: 42%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
 }
