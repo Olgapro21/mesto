@@ -13,3 +13,32 @@ const closePopup = function () {
 
 popupOpenButtonElement.addEventListener("click", openPopup);
 popupCloseButtonElement.addEventListener("click", closePopup);
+
+// Меняем статус аватара
+let formElement = popupElement.querySelector(".popup__form");
+let nameInputElement = formElement.querySelector(".popup__form-input_status_name");
+let jobInputElement = formElement.querySelector(".popup__form-input_status_job");
+let profileNameElement = document.querySelector(".profile-bloks__title");
+let profileJobElement = document.querySelector(".profile-bloks__subtitle");
+
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+  //nameInputElement.textContent = profileNameElement.value;
+  //jobInputElement.textContent = profileJobElement.value;
+  profileNameElement.textContent = nameInputElement.value;
+  profileJobElement.textContent = jobInputElement.value;
+
+
+    popupElement.classList.remove("popup_opened");
+}
+
+formElement.addEventListener('submit', handleFormSubmit);
+
+
+
+
+//profileNameElement.textContent = nameInputElement.value;
+//profileJobElement.textContent = jobInputElement.value;
+
+//nameInputElement.textContent = profileNameElement.value;
+//jobInputElement.textContent = profileJobElement.value;
