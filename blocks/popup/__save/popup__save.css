@@ -18,8 +18,12 @@
   opacity: .8;
 }
 
-@media screen and (max-width: 439px) {
-  .header {
-    width: 100%;
+@media screen and (max-width: 767px) {
+  .popup__save  {
+    min-height: 46px;
+    margin-top: 45px;
+    font-size: 14px;
+    line-height: 17px;
+    max-width: 238px;
   }
 }

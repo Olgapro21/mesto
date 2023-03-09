@@ -1,4 +1,6 @@
 .element__image {
+  margin: 0;
+  padding: 0;
   display: block;
   object-fit: cover;
   min-width: 282px;

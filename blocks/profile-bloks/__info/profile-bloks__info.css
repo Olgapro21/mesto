@@ -1,18 +1,16 @@
 .profile-bloks__info {
   margin: 0 0 0 30px;
   padding: 0;
-  max-width: 336px;
+  min-width: 336px;
   display: grid;
-  /*align-items: end;*/
   grid-template-columns: 1fr 24px;
-  gap: 18px 16px;
+  gap: 10px 18px;
 }
 
 @media screen and (max-width: 767px) {
   .profile-bloks__info {
     min-width: 217px;
     margin: 22.25px 0 30px 26px;
-    display: grid;
     grid-template-columns: 1fr 18px;
     gap: 10px 14px;
     justify-content: center;
