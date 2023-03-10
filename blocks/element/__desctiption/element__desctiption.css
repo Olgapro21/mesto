@@ -8,10 +8,3 @@
   padding: 25px 20px 31px 21px;
   border-radius: 0 0 10px 10px;
 }
-
-@media screen and (max-width: 767px) {
-  .element__desctiption {
-    max-width: 282px;
-    padding: 25px 20px 31px 21px;
-  }
-}

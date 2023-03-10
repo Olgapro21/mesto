@@ -17,6 +17,14 @@
   opacity: .6;
 }
 
+@media screen and (max-width: 1279px) {
+  .profile-bloks__edit-button {
+    margin: 16px 0 0 0;
+    max-width: 22px;
+    max-height: 22px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .profile-bloks__edit-button {
     margin: 8px 0 0 0;

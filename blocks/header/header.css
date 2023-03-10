@@ -4,21 +4,31 @@
   border-bottom: 1px solid #545454;
 }
 
-/*@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1279px) {
   .header {
-    max-width: 1024px;
-    width: calc(100% - 150px*2);
+    width: calc(100% - 48px*2);
   }
-}*/
+}
 
 @media screen and (max-width: 1023px) {
   .header {
-    max-width: 768px;
-    width: calc(100% - 35px*2);
+    width: calc(100% - 60px*2);
   }
 }
 
 @media screen and (max-width: 767px) {
+  .header {
+    width: calc(100% - 100px*2);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .header {
+    width: calc(100% - 35px*2);
+  }
+}
+
+@media screen and (max-width: 320px) {
   .header {
     width: 100%;
   }
