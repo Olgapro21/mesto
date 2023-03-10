@@ -1,17 +1,16 @@
 .element__like-ico {
-  background-color: #fff;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-align-self: center;
-background-position: center center;
-background-image:url(../../../images/lake.svg);
-background-repeat: no-repeat;
-border: none;
-cursor: pointer;
-
   width: 22px;
   height: 19px;
+  background-color: #fff;
+  box-sizing: border-box;
+  align-self: center;
+  background-image:url(../../../images/lake.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
 }
 
 .element__like-ico:hover {

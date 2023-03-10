@@ -9,9 +9,3 @@
   max-height: 282px;
   border-radius: 10px 10px 0 0;
 }
-
-@media screen and (max-width: 767px) {
-  .element__image {
-
-  }
-}

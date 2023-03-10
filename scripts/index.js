@@ -23,12 +23,9 @@ let profileJobElement = document.querySelector(".profile-bloks__subtitle");
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
-  //nameInputElement.textContent = profileNameElement.value;
-  //jobInputElement.textContent = profileJobElement.value;
   profileNameElement.textContent = nameInputElement.value;
   profileJobElement.textContent = jobInputElement.value;
-
     popupElement.classList.remove("popup_opened");
-}
+};
 
 formElement.addEventListener('submit', handleFormSubmit);

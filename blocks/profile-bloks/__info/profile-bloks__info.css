@@ -19,10 +19,8 @@
 
 @media screen and (max-width: 767px) {
   .profile-bloks__info {
-    min-width: 217px;
     margin: 22.25px 0 30px 26px;
     grid-template-columns: 1fr 18px;
     gap: 10px 14px;
-    justify-content: center;
   }
 }

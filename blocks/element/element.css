@@ -15,10 +15,10 @@
 }
 
 @media screen and (max-width: 767px) {
-.element {
-  margin: 0 auto;
-  width: 100%;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
+  .element {
+    margin: 0 auto;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
