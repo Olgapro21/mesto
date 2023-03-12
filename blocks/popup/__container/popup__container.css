@@ -6,7 +6,7 @@
   background: #fff;
   position: absolute;
   left: 50%;
-  top: 53%;
+  top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
 }
@@ -14,8 +14,7 @@
 @media screen and (max-width: 767px) {
   .popup__container {
     max-width: 282px;
-    max-height: 322px;
+    min-height: 322px;
     padding: 25px 22px 25px;
-    top: 44%;
   }
 }
