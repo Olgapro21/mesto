@@ -4,10 +4,7 @@
   max-height: 330px;
   padding: 34px 36px 37px;
   background: #fff;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   border-radius: 10px;
 }
 

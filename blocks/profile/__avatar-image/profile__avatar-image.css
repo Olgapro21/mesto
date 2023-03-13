@@ -1,4 +1,4 @@
-.profile-bloks__avatar-image {
+.profile__avatar-image {
   max-width: 120px;
   margin: 0;
   width: 120px;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .profile-bloks__avatar-image {
+  .profile__avatar-image {
     margin: 3.75px 26.25px 3.75px 22.5px;
   }
 }

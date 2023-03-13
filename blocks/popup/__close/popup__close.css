@@ -6,7 +6,7 @@
   background-color: #00000000;
   box-sizing: border-box;
   border: none;
-  background-image: url(../../../images/cose-Icon.png);
+  background-image: url(../../../images/close-icon.svg);
   align-self: center;
   background-position: center center;
   background-repeat: no-repeat;
@@ -26,5 +26,6 @@
     height: 20px;
     right: 0px;
     top: -38px;
+    background-size: 20px;
   }
 }

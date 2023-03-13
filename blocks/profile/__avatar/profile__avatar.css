@@ -1,4 +1,4 @@
-.profile-bloks__avatar {
+.profile__avatar {
   margin: 0;
   padding: 0;
   display: flex;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .profile-bloks__avatar {
+  .profile__avatar {
     flex-direction: column;
   }
 }

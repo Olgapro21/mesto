@@ -15,60 +15,58 @@
     </header>
     <main class="content">
       <section class="profile section content__section content__profile">
-        <div class="profile-bloks">
-          <div class="profile-bloks__avatar">
-            <img src="./images/ava.jpg" alt="Профильное фото" class="profile-bloks__avatar-image">
-            <div class="profile-bloks__info">
-              <h1 class="profile-bloks__title">Жак-Ив Кусто</h1>
-              <button class="profile-bloks__edit-button" type="button"></button>
-              <p class="profile-bloks__subtitle">Исследователь океана</p>
+          <div class="profile__avatar">
+            <img src="./images/ava.jpg" alt="Профильное фото" class="profile__avatar-image">
+            <div class="profile__info">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button"></button>
+              <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
-          <button class="profile-bloks__add-button" type="button"></button>
-        </div>
+          <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements section content__section">
         <ul class="element">
           <li class="element__list">
             <img src="./images/keiteu-ko-SeW_WdnjPq0-unsplash-2.jpg" alt="Абхазия" class="element__image">
             <div class="element__desctiption">
-            <p class="element__title">Абхазия</p>
-            <button class="element__like-ico element__like-ico_color_black" type="button"></button>
+            <h2 class="element__title">Абхазия</h2>
+            <button class="element__like-ico element__like-ico_active" type="button"></button>
             </div>
           </li>
           <li class="element__list">
             <img src="./images/alex-lindberg-xt-bHCWL3Zk-unsplash.jpg" alt="Санкт-Петербург" class="element__image">
             <div class="element__desctiption">
-            <p class="element__title">Санкт-Петербург</p>
-            <button class="element__like-ico element__like-ico_color_black" type="button"></button>
+            <h2 class="element__title">Санкт-Петербург</h2>
+            <button class="element__like-ico element__like-ico_active" type="button"></button>
             </div>
           </li>
           <li class="element__list">
             <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
             <div class="element__desctiption">
-            <p class="element__title">Домбай</p>
-            <button class="element__like-ico element__like-ico_color_black" type="button"></button>
+            <h2 class="element__title">Домбай</h2>
+            <button class="element__like-ico element__like-ico_active" type="button"></button>
             </div>
           </li>
           <li class="element__list">
             <img src="./images/artem-astashov-dXsKr-q0y7s-unsplash.jpg" alt="Эльбрус" class="element__image">
             <div class="element__desctiption">
-            <p class="element__title">Эльбрус</p>
-            <button class="element__like-ico element__like-ico_color_black" type="button"></button>
+            <h2 class="element__title">Эльбрус</h2>
+            <button class="element__like-ico element__like-ico_active" type="button"></button>
             </div>
           </li>
           <li class="element__list">
             <img src="./images/nikolay-vorobyev-jaH3QF46gAY-unsplash.jpg" alt="Москва" class="element__image">
             <div class="element__desctiption">
-            <p class="element__title">Москва</p>
-            <button class="element__like-ico element__like-ico_color_black" type="button"></button>
+            <h2 class="element__title">Москва</h2>
+            <button class="element__like-ico element__like-ico_active" type="button"></button>
             </div>
           </li>
           <li class="element__list">
             <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-Черкесская Республика" class="element__image">
             <div class="element__desctiption">
-            <p class="element__title">Карачаево-Черкесская Республика</p>
-            <button class="element__like-ico element__like-ico_color_black" type="button"></button>
+            <h2 class="element__title">Карачаево-Черкесская Республика</h2>
+            <button class="element__like-ico element__like-ico_active" type="button"></button>
             </div>
           </li>
         </ul>
@@ -80,14 +78,10 @@
     <section class="popup">
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form">
-          <h2 class="popup__form-title">Редактировать профиль</h2>
-          <fieldset class="popup__form-container">
-            <input type="text" name="name" id="name" value="Имя" class="popup__form-input popup__form-input_status_name">
-          </fieldset>
-          <fieldset class="popup__form-container">
-            <input type="text" name="job" id="job" value="О себе" class="popup__form-input popup__form-input_status_job">
-          </fieldset>
+          <input type="text" name="name" id="name" value="Имя" class="popup__form-input popup__form-input_status_name">
+          <input type="text" name="job" id="job" value="О себе" class="popup__form-input popup__form-input_status_job">
           <button class="popup__save" type="submit">Сохранить</button>
         </form>
       </div>

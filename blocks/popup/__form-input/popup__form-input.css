@@ -1,7 +1,7 @@
 .popup__form-input {
   box-sizing: border-box;
   margin: 0;
-  padding: 0 0 11px 0;
+  padding: 30px 0 11px 0;
   border: none;
   border-bottom: 1px solid rgba(0,0,0,.2);
   color: #000;
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 767px) {
   .popup__form-input {
-    padding: 0 0 8px 0;
+    padding: 30px 0 8px 0;
     min-width: 238px;
   }
 }
