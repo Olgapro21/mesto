@@ -18,17 +18,11 @@
 
 @media screen and (max-width: 767px) {
   .header {
-    width: calc(100% - 100px*2);
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .header {
     width: calc(100% - 35px*2);
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 349px) {
   .header {
     width: 100%;
   }
