@@ -26,50 +26,7 @@
           <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements section content__section">
-        <ul class="element">
-          <li class="element__list">
-            <img src="./images/keiteu-ko-SeW_WdnjPq0-unsplash-2.jpg" alt="Абхазия" class="element__image">
-            <div class="element__desctiption">
-            <h2 class="element__title">Абхазия</h2>
-            <button class="element__like-ico" type="button"></button>
-            </div>
-          </li>
-          <li class="element__list">
-            <img src="./images/alex-lindberg-xt-bHCWL3Zk-unsplash.jpg" alt="Санкт-Петербург" class="element__image">
-            <div class="element__desctiption">
-            <h2 class="element__title">Санкт-Петербург</h2>
-            <button class="element__like-ico" type="button"></button>
-            </div>
-          </li>
-          <li class="element__list">
-            <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
-            <div class="element__desctiption">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__like-ico" type="button"></button>
-            </div>
-          </li>
-          <li class="element__list">
-            <img src="./images/artem-astashov-dXsKr-q0y7s-unsplash.jpg" alt="Эльбрус" class="element__image">
-            <div class="element__desctiption">
-            <h2 class="element__title">Эльбрус</h2>
-            <button class="element__like-ico" type="button"></button>
-            </div>
-          </li>
-          <li class="element__list">
-            <img src="./images/nikolay-vorobyev-jaH3QF46gAY-unsplash.jpg" alt="Москва" class="element__image">
-            <div class="element__desctiption">
-            <h2 class="element__title">Москва</h2>
-            <button class="element__like-ico" type="button"></button>
-            </div>
-          </li>
-          <li class="element__list">
-            <img src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаево-Черкесская Республика" class="element__image">
-            <div class="element__desctiption">
-            <h2 class="element__title">Карачаево-Черкесская Республика</h2>
-            <button class="element__like-ico" type="button"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="element"></ul>
       </section>
     </main>
     <footer class="footer section page__footer">
@@ -93,11 +50,20 @@
         <form name="form-card" class="popup__form">
           <input type="text" name="name" id="title" placeholder="Название" minlength="1" maxlength="40" class="popup__form-input popup__form-input_type_title">
           <input type="text" name="link" id="link" placeholder="Ссылка на картинку" class="popup__form-input popup__form-input_type_link">
-          <button class="popup__save" type="submit">Создать</button>
+          <button class="popup__save popup__save_type_card" type="submit">Создать</button>
         </form>
       </div>
     </section>
   </div>
+  <template class="elements-template">
+      <li class="element__list">
+        <img src="" alt="Картинка" class="element__image">
+        <div class="element__desctiption">
+        <h2 class="element__title"></h2>
+        <button class="element__like element__like-ico" type="button"></button>
+        </div>
+      </li>
+  </template>
  <script src="./scripts/index.js"></script>
 </body>
 </html>
