@@ -60,6 +60,7 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
 const itemTemplate = document.querySelector(".elements-template").content;
 const list = document.querySelector(".element");
 const formInputtitle = document.querySelector(".popup__form-input_type_title");
@@ -73,10 +74,16 @@ function renderItem(item) {
   htmlElement.querySelector(".element__image").src = item.link;
   htmlElement.querySelector(".element__image").alt = item.name;
   htmlElement.querySelector(".element__title").textContent = item.name;
-  list.append(htmlElement);
-}
+// Лайк карточки
+  htmlElement.querySelector(".element__like-ico").addEventListener('click', function (evt) {
+    const eventTarget = evt.target;
+      evt.target.classList.toggle("element__like-ico_active");
+  });
 
-//2. Форма добавления карточки
+  list.append(htmlElement);
+};
+
+//Форма добавления карточки
 const popupCardElement = document.querySelector(".popup_type_card");
 const popupCardOpenButtonElement = document.querySelector(".profile__add-button"); //открыть
 const popupCardCloseButtonElement = document.querySelector(".popup__close-card"); //закрыть
@@ -94,7 +101,7 @@ popupCardOpenButtonElement.addEventListener("click", openPopupCard);
 popupCardCloseButtonElement.addEventListener("click", closePopupCard);
 
 
-
+//Добавление карточки
 
 
 

@@ -1,0 +1,22 @@
+.element__delete-image {
+  /*margin: 0;
+  padding: 0;*/
+  width: 18px;
+  height: 19px;
+  background-color: transparent;
+  box-sizing: border-box;
+  align-self: center;
+  background-image:url(../../../images/cloce.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+}
+
+.element__delete-image:hover {
+  opacity: .6;
+}
