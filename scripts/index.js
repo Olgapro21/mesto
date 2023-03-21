@@ -1,4 +1,5 @@
-const popupElement = document.querySelector(".popup");
+//4 спринт
+const popupElement = document.querySelector(".popup_type_profile");
 const popupCloseButtonElement = popupElement.querySelector(".popup__close");
 const popupOpenButtonElement = document.querySelector(".profile__edit-button");
 
@@ -30,4 +31,21 @@ function handleFormSubmit(evt) {
 };
 
 formElement.addEventListener('submit', handleFormSubmit);
+
+//5 спринт
+const popupCardElement = document.querySelector(".popup_type_card");
+const popupCardOpenButtonElement = document.querySelector(".profile__add-button"); //открыть
+const popupCardCloseButtonElement = document.querySelector(".popup__close-card"); //закрыть
+
+//Открытие
+const openPopupCard = function () {
+  popupCardElement.classList.add("popup_opened");
+};
+//Закрытие
+const closePopupCard  = function () {
+  popupCardElement.classList.remove("popup_opened");
+};
+
+popupCardOpenButtonElement.addEventListener("click", openPopupCard);
+popupCardCloseButtonElement.addEventListener("click", closePopupCard);
 
