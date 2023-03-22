@@ -33,7 +33,7 @@ function handleFormSubmit(evt) {
 formElement.addEventListener('submit', handleFormSubmit);
 
 //5 спринт
-// 1. Шесть карточек «из коробки»
+// Шесть карточек «из коробки»
 const initialCards = [
   {
     name: 'Архыз',
@@ -74,13 +74,23 @@ function renderItem(item) {
   htmlElement.querySelector(".element__image").src = item.link;
   htmlElement.querySelector(".element__image").alt = item.name;
   htmlElement.querySelector(".element__title").textContent = item.name;
+  setEventListeners(htmlElement);
 // Лайк карточки
-  htmlElement.querySelector(".element__like-ico").addEventListener('click', function (evt) {
-    const eventTarget = evt.target;
-      evt.target.classList.toggle("element__like-ico_active");
-  });
-
+htmlElement.querySelector(".element__like-ico").addEventListener('click', function (evt) {
+  const eventTarget = evt.target;
+    evt.target.classList.toggle("element__like-ico_active");
+});
   list.append(htmlElement);
+};
+
+// Удаление карточки!!!!!!
+function handleDelete (event) {
+  const listDelete = event.target.closest(".element__list");
+  listDelete.remove();
+};
+
+function setEventListeners(htmlElement) {
+	htmlElement.querySelector(".element__delete-image").addEventListener('click', handleDelete);
 };
 
 //Форма добавления карточки
@@ -88,11 +98,11 @@ const popupCardElement = document.querySelector(".popup_type_card");
 const popupCardOpenButtonElement = document.querySelector(".profile__add-button"); //открыть
 const popupCardCloseButtonElement = document.querySelector(".popup__close-card"); //закрыть
 
-//Открытие
+//Открытие карточки
 const openPopupCard = function () {
   popupCardElement.classList.add("popup_opened");
 };
-//Закрытие
+//Закрытие карточки
 const closePopupCard  = function () {
   popupCardElement.classList.remove("popup_opened");
 };
@@ -102,6 +112,7 @@ popupCardCloseButtonElement.addEventListener("click", closePopupCard);
 
 
 //Добавление карточки
+
 
 
 
