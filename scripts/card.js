@@ -1,3 +1,4 @@
+//Черновик
 const popup = document.querySelector('.popup'); // основной попап
 const popupElement = document.querySelector(".popup_type_profile"); // доп попап профиля !!!!
 const popupCardElement = document.querySelector(".popup_type_card"); // доп попап Новое место
@@ -14,3 +15,19 @@ const profileJobElement = document.querySelector(".profile__subtitle"); //про
 const list = document.querySelector(".element"); //ul
 const popupImage = document.querySelector(".popup__image"); //картинка в попапе фото
 const popuptitle = document.querySelector(".popup__image-title"); //надпись в попапе фото
+const formInputtitle = document.querySelector(".popup__form-input_type_title"); //импут надписи
+const formInputlink = document.querySelector(".popup__form-input_type_link"); //импут фото
+
+
+
+
+
+
+
+
+
+
+
+
+
+

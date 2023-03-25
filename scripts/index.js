@@ -1,7 +1,7 @@
 //4 спринт
 const popup = document.querySelector('.popup'); // основной попап
 const popupElement = document.querySelector(".popup_type_profile"); // доп попап профиля
-const popupCloseButtonElement = popupElement.querySelector(".popup__close"); // кнопка закрытия попапа
+const popupCloseButtonElements = document.querySelectorAll(".popup__close"); // кнопка закрытия попапа
 const popupOpenButtonElement = document.querySelector(".profile__edit-button"); // кнопка открытия профиля
 
 //открытие попапа профиля
@@ -10,14 +10,20 @@ const openPopup = function () {
   nameInputElement.value = profileNameElement.textContent;
   jobInputElement.value =profileJobElement.textContent;
 };
+
 //закрытие попапа профиля
-const closePopup = function () {
+function closePopup (popup) {
   popup.classList.remove("popup_opened");
 };
 
-popupOpenButtonElement.addEventListener("click", openPopup);
-popupCloseButtonElement.addEventListener("click", closePopup);
+popupCloseButtonElements.forEach((element) => {
+  const popup = element.closest(".popup");
+  element.addEventListener("click", () => {
+    closePopup (popup)
+  })
+});
 
+popupOpenButtonElement.addEventListener("click", openPopup);
 
 // Меняем статус аватара
 let formElement = popupElement.querySelector(".popup__form");
@@ -30,7 +36,7 @@ function handleFormSubmit(evt) {
   evt.preventDefault();
   profileNameElement.textContent = nameInputElement.value;
   profileJobElement.textContent = jobInputElement.value;
-  closePopup();
+  closePopup(popupElement);
 };
 
 formElement.addEventListener('submit', handleFormSubmit);
@@ -66,18 +72,13 @@ const initialCards = [
 
 const itemTemplate = document.querySelector(".elements-template").content; // нашла темлейт
 const list = document.querySelector(".element"); // нашла ul
-//const formInputtitle = document.querySelector(".popup__form-input_type_title");
-//const formInputlink = document.querySelector(".popup__form-input_type_link");
-//const formButton = document.querySelector(".popup__save_type_card");
-//Попап с фото
+const formButton = document.querySelector(".popup__save_type_card");
 const popupImageElement = document.querySelector(".popup__open-image"); //доп попап открытие фото
 const popupImageCloseButtonElement = document.querySelector(".popup__close-image"); //закрыть
 const popupImage = document.querySelector(".popup__image");
 const popuptitle = document.querySelector(".popup__image-title");
 
-
-initialCards.forEach(renderItem,); // массив
-
+//Создаем массив карточек
 function renderItem(item) {
   const htmlElement = itemTemplate.cloneNode(true); // скопировала темплейт
   htmlElement.querySelector(".element__image").src = item.link; //добавила картинки
@@ -90,20 +91,19 @@ function renderItem(item) {
   openPopupImage ();
   });
   setEventListeners(htmlElement); //вызвала функцию
-  list.append(htmlElement); //добавила с помощью метода append наш клон в ul в конец
+  return htmlElement
 };
 
-//открытие попапа фото
+//Прошлась по массиву
+initialCards.forEach((Object) => {
+const card = renderItem(Object);
+list.append(card); //добавила с помощью метода append наш клон в ul в конец
+});
+
+//открытие попапа просмотр фото
 const openPopupImage = function () {
   popupImageElement.classList.add("popup_opened");
 }
-
-//Закрытие фото
-const closePopupImage = function () {
-popupImageCloseButtonElement.classList.remove("popup_opened");
-};
-
-popupImageCloseButtonElement.addEventListener("click", closePopupImage);
 
 // Удаление карточки
 function handleDelete (event) {
@@ -120,41 +120,32 @@ function handleLike (evt) {
 //создала отдельную функцию, чтобы не загружать темплейт
 function setEventListeners(htmlElement) {
 	htmlElement.querySelector(".element__delete-image").addEventListener('click', handleDelete); //добавила кнопку карзины на которую про
-  htmlElement.querySelector(".element__like-ico").addEventListener('click', handleLike);
-
+  htmlElement.querySelector(".element__like-ico").addEventListener('click', handleLike); // лайк
 };
 
-
-
-
-
-
-
-
-
-
-
-//Форма открытия попапа добавления карточек
+//Форма открытия попапа "Новое место"
 const popupCardElement = document.querySelector(".popup_type_card"); //доп попап Новое место
 const popupCardOpenButtonElement = document.querySelector(".profile__add-button"); //открыть
 const popupCardCloseButtonElement = document.querySelector(".popup__close-card"); //закрыть
+const formCardElement = popupCardElement.querySelector(".popup__form");
+const titleElement = document.querySelector(".element__title");
+const formInputtitle = document.querySelector(".popup__form-input_type_title"); //импут надписи
+const formInputlink = document.querySelector(".popup__form-input_type_link"); //импут фото
 
 //Открытие
 const openPopupCard = function () {
   popupCardElement.classList.add("popup_opened"); //добавила popup_opened
 };
-//Закрытие
-const closePopupCard  = function () {
-popupCardElement.classList.remove("popup_opened"); //удалила popup_opened
-};
 
 popupCardOpenButtonElement.addEventListener("click", openPopupCard);
-popupCardCloseButtonElement.addEventListener("click", closePopupCard);
 
-
-
-
-
-
-
-
+// Сабмит передачи новых данных в массив
+formCardElement.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  const itemNew = {name: formInputtitle.value, link: formInputlink.value};
+  //formInputtitle.value = '';
+  //formInputlink.value = '';
+  list.prepend(renderItem(itemNew));
+  closePopup(popupCardElement);
+  evt.target.reset();
+});
