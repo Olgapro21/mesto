@@ -11,7 +11,7 @@ function openPopup (popup) {
 profileOpenButton.addEventListener("click", () => {
   nameInputProfileForm.value = profileNameForm.textContent;
   jobInputProfileForm.value = profileJobForm.textContent;
-  openPopup(profilePopup)
+  openPopup(profilePopup);
 });
 
 //закрытие попапов
@@ -22,7 +22,7 @@ function closePopup (popup) {
 popupCloseButton.forEach((element) => {
   const popup = element.closest(".popup");
   element.addEventListener("click", () => {
-    closePopup (popup)
+    closePopup (popup);
   })
 });
 
@@ -33,14 +33,14 @@ const jobInputProfileForm = profileForm.querySelector(".popup__form-input_status
 const profileNameForm = document.querySelector(".profile__title");
 const profileJobForm = document.querySelector(".profile__subtitle");
 
-function handleFormSubmit(evt) {
+function handleFormProfileSubmit(evt) {
   evt.preventDefault();
   profileNameForm.textContent = nameInputProfileForm.value;
   profileJobForm.textContent = jobInputProfileForm.value;
   closePopup(profilePopup);
 };
 
-profileForm.addEventListener('submit', handleFormSubmit);
+profileForm.addEventListener('submit', handleFormProfileSubmit);
 
 //5 спринт
 // Шесть карточек «из коробки»
@@ -79,16 +79,16 @@ const popuptitle = document.querySelector(".popup__image-title");
 
 //Создаем массив карточек
 function renderItem(item) {
-  const htmlElement = itemTemplate.cloneNode(true); // скопировала темплейт
+  const htmlElement = itemTemplate.cloneNode(true);
   const imageTemplateElement = htmlElement.querySelector(".element__image");
   imageTemplateElement.src = item.link;
   imageTemplateElement.alt = item.link;
-  htmlElement.querySelector(".element__title").textContent = item.name; //добавила текст
+  htmlElement.querySelector(".element__title").textContent = item.name;
   imageTemplateElement.addEventListener('click', function () {
-  popupImage.src = item.link;
-  popupImage.alt = item.name;
-  popuptitle.textContent = item.name;
-  openPopup(popupImageElement);
+    popupImage.src = item.link;
+    popupImage.alt = item.name;
+    popuptitle.textContent = item.name;
+    openPopup(popupImageElement);
   });
   setEventListeners(htmlElement); //вызвала функцию
   return htmlElement
@@ -96,8 +96,8 @@ function renderItem(item) {
 
 //Прошлась по массиву
 initialCards.forEach((object) => {
-const card = renderItem(object);
-list.append(card); //добавила с помощью метода append наш клон в ul в конец
+  const card = renderItem(object);
+  list.append(card); //добавила с помощью метода append наш клон в ul в конец
 });
 
 // Удаление карточки
@@ -135,8 +135,6 @@ popupCardOpenButtonElement.addEventListener("click", () => {
 formCardElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const itemNew = {name: formInputtitle.value, link: formInputlink.value};
-  //formInputtitle.value = '';
-  //formInputlink.value = '';
   list.prepend(renderItem(itemNew));
   closePopup(popupCardElement);
   evt.target.reset();
