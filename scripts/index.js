@@ -1,4 +1,5 @@
 //4 спринт
+const popupElements = document.querySelectorAll(".popup"); //  попап общий
 const profilePopup = document.querySelector(".popup_type_profile"); // доп попап профиля
 const popupCloseButton = document.querySelectorAll(".popup__close"); // кнопка закрытия попапа
 const profileOpenButton = document.querySelector(".profile__edit-button"); // кнопка открытия профиля
@@ -6,6 +7,7 @@ const profileOpenButton = document.querySelector(".profile__edit-button"); // к
 //открытие попапов
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener('keydown', closePopupEscape);
 }
 
 profileOpenButton.addEventListener("click", () => {
@@ -17,6 +19,7 @@ profileOpenButton.addEventListener("click", () => {
 //закрытие попапов
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener('keydown', closePopupEscape);
 }
 
 popupCloseButton.forEach((element) => {
@@ -26,10 +29,31 @@ popupCloseButton.forEach((element) => {
   });
 });
 
+//Закрытие попапов при нажатии на Esc
+function closePopupEscape(evt) {
+  if (evt.key ==='Escape') {
+    const popupOpened = document.querySelector('.popup_opened')
+    closePopup(popupOpened);
+  }
+}
+
+//Закрытие попапов при нажатии на пустое поле
+function closePopupOverlay (event) {
+  if (event.target !== event.currentTarget) {
+    return;
+  }
+  closePopup(event.currentTarget);
+};
+
+popupElements.forEach(function(popup) {
+  popup.addEventListener('mousedown', closePopupOverlay);
+});
+
+
 // Меняем статус аватара
-const profileForm = profilePopup.querySelector(".popup__form"); //форма профиля
-const nameInputProfileForm = profileForm.querySelector(".popup__form-input_status_name");
-const jobInputProfileForm = profileForm.querySelector(".popup__form-input_status_job");
+const profileForm = profilePopup.querySelector(".popup__form_type_profile"); //форма профиля
+const nameInputProfileForm = profileForm.querySelector(".popup__input_status_name"); // импут имени
+const jobInputProfileForm = profileForm.querySelector(".popup__input_status_job"); // импут статуса
 const profileNameForm = document.querySelector(".profile__title");
 const profileJobForm = document.querySelector(".profile__subtitle");
 
@@ -41,6 +65,7 @@ function handleProfileFormSubmit(evt) {
 }
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
+
 
 //5 спринт
 // Шесть карточек «из коробки»
@@ -121,10 +146,10 @@ function setEventListeners(htmlElement) {
 //Форма открытия попапа "Новое место"
 const popupCardElement = document.querySelector(".popup_type_card"); //доп попап Новое место
 const popupCardOpenButtonElement = document.querySelector(".profile__add-button"); //открыть
-const formCardElement = popupCardElement.querySelector(".popup__form");
+const formCardElement = popupCardElement.querySelector(".popup__form_type_card");
 const titleElement = document.querySelector(".element__title");
-const formInputtitle = document.querySelector(".popup__form-input_type_title"); //импут надписи
-const formInputlink = document.querySelector(".popup__form-input_type_link"); //импут фото
+const formInputtitle = document.querySelector(".popup__input_type_title"); //импут надписи
+const formInputlink = document.querySelector(".popup__input_type_link"); //импут фото
 
 //Открытие попапа "Новое место"
 popupCardOpenButtonElement.addEventListener("click", () => {
@@ -139,3 +164,14 @@ formCardElement.addEventListener("submit", (evt) => {
   closePopup(popupCardElement);
   evt.target.reset();
 });
+
+//popupElements.forEach(element => element.addEventListener('click',closePopupOv));
+
+
+
+
+
+
+
+
+
