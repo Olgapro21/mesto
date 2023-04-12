@@ -44,7 +44,6 @@ popupElements.forEach(function(popup) {
 });
 
 // Меняем статус аватара
-//const profileForm = document.forms.form-profile; //форма профиля
 const profileForm = profilePopup.querySelector(".popup__form_type_profile"); //форма профиля
 const nameInputProfileForm = profileForm.querySelector(".popup__input_status_name"); // импут имени popup__input
 const jobInputProfileForm = profileForm.querySelector(".popup__input_status_job"); // импут статуса
