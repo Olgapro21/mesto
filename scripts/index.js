@@ -10,12 +10,6 @@ function openPopup(popup) {
   document.addEventListener('keydown', closePopupEscape);
 }
 
-profileOpenButton.addEventListener("click", () => {
-  nameInputProfileForm.value = profileNameForm.textContent;
-  jobInputProfileForm.value = profileJobForm.textContent;
-  openPopup(profilePopup);
-});
-
 //закрытие попапов
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
@@ -49,13 +43,23 @@ popupElements.forEach(function(popup) {
   popup.addEventListener('mousedown', closePopupOverlay);
 });
 
-
 // Меняем статус аватара
+//const profileForm = document.forms.form-profile; //форма профиля
 const profileForm = profilePopup.querySelector(".popup__form_type_profile"); //форма профиля
-const nameInputProfileForm = profileForm.querySelector(".popup__input_status_name"); // импут имени
+const nameInputProfileForm = profileForm.querySelector(".popup__input_status_name"); // импут имени popup__input
 const jobInputProfileForm = profileForm.querySelector(".popup__input_status_job"); // импут статуса
 const profileNameForm = document.querySelector(".profile__title");
 const profileJobForm = document.querySelector(".profile__subtitle");
+const InputElementsProfilePopup = profileForm.querySelectorAll(".popup__input"); //общий импут профиля для очистка
+const ButtonSubmitElementsProfilePopup = profileForm.querySelector(".popup__button"); // общая кнопка сабмита профиля для очистка
+
+profileOpenButton.addEventListener("click", () => {
+  resetErrorMessageOpenForm(profilePopup); //очистка сообщений об ошибке
+  nameInputProfileForm.value = profileNameForm.textContent;
+  jobInputProfileForm.value = profileJobForm.textContent;
+  toggleButtonState(InputElementsProfilePopup, ButtonSubmitElementsProfilePopup, validationConfig.inactiveButtonClass); // кнопка активна
+  openPopup(profilePopup);
+});
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -64,8 +68,8 @@ function handleProfileFormSubmit(evt) {
   closePopup(profilePopup);
 }
 
-profileForm.addEventListener("submit", handleProfileFormSubmit);
-
+//profileForm
+profilePopup.addEventListener("submit", handleProfileFormSubmit);
 
 //5 спринт
 // Шесть карточек «из коробки»
@@ -145,14 +149,21 @@ function setEventListeners(htmlElement) {
 
 //Форма открытия попапа "Новое место"
 const popupCardElement = document.querySelector(".popup_type_card"); //доп попап Новое место
-const popupCardOpenButtonElement = document.querySelector(".profile__add-button"); //открыть
+const popupCardOpenButtonElement = document.querySelector(".profile__add-button"); //кнопка открыть
 const formCardElement = popupCardElement.querySelector(".popup__form_type_card");
 const titleElement = document.querySelector(".element__title");
 const formInputtitle = document.querySelector(".popup__input_type_title"); //импут надписи
 const formInputlink = document.querySelector(".popup__input_type_link"); //импут фото
+const InputElementsPopupCard = popupCardElement.querySelectorAll(".popup__input"); //общий импут профиля для очистка
+const ButtonSubmitElementsPopupCard = popupCardElement.querySelector(".popup__button"); // общая кнопка сабмита профиля для очистка
 
 //Открытие попапа "Новое место"
 popupCardOpenButtonElement.addEventListener("click", () => {
+  //очистила форму если были внесены изменения, а сабмит не произошел
+  formInputtitle.value = '';
+  formInputlink.value = '';
+  resetErrorMessageOpenForm(popupCardElement); //очистка сообщений об ошибке
+  toggleButtonState(InputElementsPopupCard, ButtonSubmitElementsPopupCard, validationConfig.inactiveButtonClass); // кнопка активна
   openPopup(popupCardElement);
 });
 
@@ -164,14 +175,3 @@ formCardElement.addEventListener("submit", (evt) => {
   closePopup(popupCardElement);
   evt.target.reset();
 });
-
-//popupElements.forEach(element => element.addEventListener('click',closePopupOv));
-
-
-
-
-
-
-
-
-
