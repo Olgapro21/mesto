@@ -49,14 +49,14 @@ const nameInputProfileForm = profileForm.querySelector(".popup__input_status_nam
 const jobInputProfileForm = profileForm.querySelector(".popup__input_status_job"); // импут статуса
 const profileNameForm = document.querySelector(".profile__title");
 const profileJobForm = document.querySelector(".profile__subtitle");
-const InputElementsProfilePopup = profileForm.querySelectorAll(".popup__input"); //общий импут профиля для очистка
-const ButtonSubmitElementsProfilePopup = profileForm.querySelector(".popup__button"); // общая кнопка сабмита профиля для очистка
+const inputElementsProfilePopup = profileForm.querySelectorAll(".popup__input"); //общий импут профиля для очистка
+const buttonSubmitElementsProfilePopup = profileForm.querySelector(".popup__button"); // общая кнопка сабмита профиля для очистка
 
 profileOpenButton.addEventListener("click", () => {
   resetErrorMessageOpenForm(profilePopup); //очистка сообщений об ошибке
   nameInputProfileForm.value = profileNameForm.textContent;
   jobInputProfileForm.value = profileJobForm.textContent;
-  toggleButtonState(InputElementsProfilePopup, ButtonSubmitElementsProfilePopup, validationConfig.inactiveButtonClass); // кнопка активна
+  toggleButtonState(inputElementsProfilePopup, buttonSubmitElementsProfilePopup, validationConfig.inactiveButtonClass); // кнопка активна
   openPopup(profilePopup);
 });
 
@@ -106,8 +106,8 @@ const popupImage = document.querySelector(".popup__image");
 const popuptitle = document.querySelector(".popup__image-title");
 
 //Создаем массив карточек
-function renderItem(item) {
-  const htmlElement = itemTemplate.cloneNode(true);
+function createCard(item) {
+  const htmlElement = itemTemplate.querySelector(".element__list").cloneNode(true);
   const imageTemplateElement = htmlElement.querySelector(".element__image");
   imageTemplateElement.src = item.link;
   imageTemplateElement.alt = item.link;
@@ -124,7 +124,7 @@ function renderItem(item) {
 
 //Прошлась по массиву
 initialCards.forEach((object) => {
-  const card = renderItem(object);
+  const card = createCard(object);
   list.append(card); //добавила с помощью метода append наш клон в ul в конец
 });
 
@@ -153,8 +153,8 @@ const formCardElement = popupCardElement.querySelector(".popup__form_type_card")
 const titleElement = document.querySelector(".element__title");
 const formInputtitle = document.querySelector(".popup__input_type_title"); //импут надписи
 const formInputlink = document.querySelector(".popup__input_type_link"); //импут фото
-const InputElementsPopupCard = popupCardElement.querySelectorAll(".popup__input"); //общий импут профиля для очистка
-const ButtonSubmitElementsPopupCard = popupCardElement.querySelector(".popup__button"); // общая кнопка сабмита профиля для очистка
+const inputElementsPopupCard = popupCardElement.querySelectorAll(".popup__input"); //общий импут профиля для очистка
+const buttonSubmitElementsPopupCard = popupCardElement.querySelector(".popup__button"); // общая кнопка сабмита профиля для очистка
 
 //Открытие попапа "Новое место"
 popupCardOpenButtonElement.addEventListener("click", () => {
@@ -162,7 +162,7 @@ popupCardOpenButtonElement.addEventListener("click", () => {
   formInputtitle.value = '';
   formInputlink.value = '';
   resetErrorMessageOpenForm(popupCardElement); //очистка сообщений об ошибке
-  toggleButtonState(InputElementsPopupCard, ButtonSubmitElementsPopupCard, validationConfig.inactiveButtonClass); // кнопка активна
+  toggleButtonState(inputElementsPopupCard, buttonSubmitElementsPopupCard, validationConfig.inactiveButtonClass); // кнопка активна
   openPopup(popupCardElement);
 });
 
@@ -170,7 +170,7 @@ popupCardOpenButtonElement.addEventListener("click", () => {
 formCardElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const itemNew = {name: formInputtitle.value, link: formInputlink.value};
-  list.prepend(renderItem(itemNew));
+  list.prepend(createCard(itemNew));
   closePopup(popupCardElement);
   evt.target.reset();
 });
