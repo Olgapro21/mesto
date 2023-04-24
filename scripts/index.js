@@ -3,6 +3,7 @@ const popupElements = document.querySelectorAll(".popup"); //  попап общ
 const profilePopup = document.querySelector(".popup_type_profile"); // доп попап профиля
 const popupCloseButton = document.querySelectorAll(".popup__close"); // кнопка закрытия попапа
 const profileOpenButton = document.querySelector(".profile__edit-button"); // кнопка открытия профиля
+console.log(this)
 
 //открытие попапов
 function openPopup(popup) {
@@ -72,32 +73,6 @@ profilePopup.addEventListener("submit", handleProfileFormSubmit);
 
 //5 спринт
 // Шесть карточек «из коробки»
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
 
 const itemTemplate = document.querySelector(".elements-template").content; // нашла темлейт
 const list = document.querySelector(".element"); // нашла ul
