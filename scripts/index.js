@@ -1,6 +1,6 @@
 import initialCards from './cards.js' //массив изначальных карточек
 import Card from './card.js'
-import FormValidator from './Formvalidator.js'
+import FormValidator from './formvalidator.js'
 
 const popupElements = document.querySelectorAll(".popup"); //  попап общий
 const profilePopup = document.querySelector(".popup_type_profile"); // доп попап профиля
