@@ -73,7 +73,7 @@ export default class FormValidator {
     this._setEventListeners();
   }
 
-  resetErrorMessageOpenForm() {
+  resetValidation() {
     this._inputElement.forEach(input => {
       const errorContainer = this._form.querySelector(`${this._errorSelector}${input.name}`)
       if (!input.validity.valid) {

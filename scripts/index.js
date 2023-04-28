@@ -1,10 +1,10 @@
 import initialCards from './cards.js' //массив изначальных карточек
-import Card from './card.js'
-import FormValidator from './formvalidator.js'
+import Card from './Card.js'
+import FormValidator from './FormValidator.js'
 
 const popupElements = document.querySelectorAll(".popup"); //  попап общий
 const profilePopup = document.querySelector(".popup_type_profile"); // доп попап профиля
-const popupCloseButton = document.querySelectorAll(".popup__close"); // кнопка закрытия попапа
+const popupCloseButtons = document.querySelectorAll(".popup__close"); // кнопка закрытия попапа
 const profileOpenButton = document.querySelector(".profile__edit-button"); // кнопка открытия профиля
 const profileForm = profilePopup.querySelector(".popup__form_type_profile"); //форма профиля
 const nameInputProfileForm = profileForm.querySelector(".popup__input_status_name"); // импут имени popup__input
@@ -44,7 +44,7 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closePopupEscape);
 }
 
-popupCloseButton.forEach((element) => {
+popupCloseButtons.forEach((element) => {
   const popup = element.closest(".popup");
   element.addEventListener("click", () => {
     closePopup(popup);
@@ -73,7 +73,7 @@ popupElements.forEach(function(popup) {
 
 //открытие профиля
 profileOpenButton.addEventListener("click", () => {
-  formProfileValidationConfig.resetErrorMessageOpenForm()//очистка сообщений об ошибке
+  formProfileValidationConfig.resetValidation()//очистка сообщений об ошибке
   nameInputProfileForm.value = profileNameForm.textContent;
   jobInputProfileForm.value = profileJobForm.textContent;
   openPopup(profilePopup);
@@ -124,7 +124,7 @@ popupCardOpenButtonElement.addEventListener("click", () => {
   //очистила форму если были внесены изменения, а сабмит не произошел
   formInputtitle.value = '';
   formInputlink.value = '';
-  formCardValidationConfig.resetErrorMessageOpenForm()//очистка сообщений об ошибке
+  formCardValidationConfig.resetValidation()//очистка сообщений об ошибке
   openPopup(popupCardElement);
 });
 
